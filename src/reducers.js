@@ -2,8 +2,6 @@ import { combineReducers } from "redux";
 import { SET_FORM_DATA } from "./actions";
 
 const formData = (state = [], action) => {
-  console.log(state);
-  console.log(action);
   if (action.type === SET_FORM_DATA) {
     return action.payload;
   }

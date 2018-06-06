@@ -1,36 +1,35 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { ListGroup, ListGroupItem } from "reactstrap";
+import { connect } from "react-redux";
 
-import { formHTMLElement } from "../helpers";
 import { setFormData } from "../actionCreators";
 
 class Sidebar extends Component {
-  handleFormElement = element => {
-    console.log(element);
-    // console.log(formHTMLElement(element));
-    formHTMLElement(element);
+  onDragStart = (ev, element) => {
+    ev.dataTransfer.setData("element", element);
   };
 
   render() {
     return (
-      <ListGroup>
-        <ListGroupItem>
-          <button className="btn btn-primary" onClick={() => this.handleFormElement("input")}>
-            Input
-          </button>
-        </ListGroupItem>
-        <ListGroupItem>
-          <button className="btn btn-primary" onClick={() => this.handleFormElement("button")}>
-            Button
-          </button>
-        </ListGroupItem>
-        <ListGroupItem>
-          <button className="btn btn-danger" onClick={this.props.deleteForm}>
-            Delete Form
-          </button>
-        </ListGroupItem>
-      </ListGroup>
+      <div>
+        <ListGroup>
+          <ListGroupItem>
+            <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "input")}>
+              Input
+            </button>
+          </ListGroupItem>
+          <ListGroupItem>
+            <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "button")}>
+              Checkbox
+            </button>
+          </ListGroupItem>
+          <ListGroupItem>
+            <button className="btn btn-danger" onClick={this.props.deleteForm}>
+              Delete Form
+            </button>
+          </ListGroupItem>
+        </ListGroup>
+      </div>
     );
   }
 }
