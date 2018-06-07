@@ -2,15 +2,7 @@ import store from "../store";
 import { setFormData } from "../actionCreators";
 
 export function formHTMLElement(element) {
-  // let renderElement;
-  // if (element.element === "input") {
-  //   renderElement = element;
-  // }
-  // if (element.element === "checkbox") {
-  //   renderElement = element;
-  // }
   updateLocalStorage(element);
-  // return element;
 }
 
 function updateLocalStorage(renderElement) {

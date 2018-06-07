@@ -8,6 +8,9 @@ import { formHTMLElement } from "../util/elementIn";
 import Sidebar from "./Sidebar";
 import Canvas from "./Canvas";
 import InputDetailsForm from "./element-details/InputDetailsForm";
+import CheckboxDetailsForm from "./element-details/CheckboxDetailsForm";
+import CounterDetailsForm from "./element-details/CounterDetailsForm";
+import DropdownDetailsForm from "./element-details/DropdownDetailsForm";
 
 class FormBuilder extends Component {
   state = {
@@ -41,6 +44,12 @@ class FormBuilder extends Component {
     let modalForm;
     if (this.state.chosenElement === "input") {
       modalForm = <InputDetailsForm submitModal={this.submitModal} />;
+    } else if (this.state.chosenElement === "checkbox") {
+      modalForm = <CheckboxDetailsForm submitModal={this.submitModal} />;
+    } else if (this.state.chosenElement === "counter") {
+      modalForm = <CounterDetailsForm submitModal={this.submitModal} />;
+    } else if (this.state.chosenElement === "dropdown") {
+      modalForm = <DropdownDetailsForm submitModal={this.submitModal} />;
     }
     return (
       <div className="form-builder">

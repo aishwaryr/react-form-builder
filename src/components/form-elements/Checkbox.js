@@ -9,9 +9,11 @@ class Checkbox extends Component {
   render() {
     const { label, placeholder, index } = this.props;
     return (
-      <FormGroup>
-        <Label for="exampleEmail">{label}</Label>
-        <Input type="text" name={label.toLowerCase()} id={`input-${index}`} placeholder={placeholder} />
+      <FormGroup check>
+        <Label check>
+          <Input type="checkbox" />
+          {label}
+        </Label>
       </FormGroup>
     );
   }

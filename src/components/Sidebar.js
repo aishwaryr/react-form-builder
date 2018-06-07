@@ -3,6 +3,7 @@ import { ListGroup, ListGroupItem } from "reactstrap";
 import { connect } from "react-redux";
 
 import { setFormData } from "../actionCreators";
+// import Dropdown from "./form-elements/Dropdown";
 
 class Sidebar extends Component {
   onDragStart = (ev, element) => {
@@ -19,8 +20,18 @@ class Sidebar extends Component {
             </button>
           </ListGroupItem>
           <ListGroupItem>
-            <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "button")}>
+            <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "checkbox")}>
               Checkbox
+            </button>
+          </ListGroupItem>
+          <ListGroupItem>
+            <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "counter")}>
+              Counter
+            </button>
+          </ListGroupItem>
+          <ListGroupItem>
+            <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "dropdown")}>
+              Dropdown
             </button>
           </ListGroupItem>
           <ListGroupItem>
