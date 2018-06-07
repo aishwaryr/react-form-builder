@@ -25,20 +25,24 @@ class Textarea extends Component {
   render() {
     const { label } = this.props;
     const minusOneButton = (
-      <Button className="btn btn-default" onClick={() => this.counterUpDown("down")} disabled={this.state.count < 1}>
+      <Button
+        className="btn btn-default counterUpDown"
+        onClick={() => this.counterUpDown("down")}
+        disabled={this.state.count < 1}
+      >
         <FontAwesome name="minus" />
       </Button>
     );
     const addOneButton = (
-      <Button className="btn btn-default" onClick={() => this.counterUpDown("up")}>
-        <FontAwesome name="plus" />
+      <Button className="btn btn-default counterUpDown" onClick={() => this.counterUpDown("up")}>
+        <FontAwesome name="plus" onClick={() => this.counterUpDown("up")} />
       </Button>
     );
     return (
       <FormGroup>
         <Label for="{label.toLowerCase()}">{label}</Label>
         {minusOneButton}
-        {this.state.count}
+        <span className="counter">{this.state.count}</span>
         {addOneButton}
       </FormGroup>
     );

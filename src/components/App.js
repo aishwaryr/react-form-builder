@@ -14,8 +14,6 @@ const App = () => (
       <div className="app">
         <Switch>
           <Route exact path="/" component={FormBuilder} />
-          {/* <Route path="/product/:id" component={Details} /> */}
-          {/* <Route path="/product-form" component={ProductForm} /> */}
         </Switch>
       </div>
     </Provider>

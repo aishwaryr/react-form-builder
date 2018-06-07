@@ -61,10 +61,4 @@ const mapStateToProps = state => {
   return { formData };
 };
 
-// const mapDispatchToProps = dispatch => ({
-//   loadProducts() {
-//     dispatch(fetchProductsFromDB());
-//   }
-// });
-
 export default connect(mapStateToProps, null)(Canvas);

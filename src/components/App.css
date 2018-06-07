@@ -8,3 +8,18 @@
 .inline {
   display: inline;
 }
+
+.counterUpDown {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.counter {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* .form-element-holder {
+  margin-top: 10px;
+  margin-bottom: 10px;
+} */
