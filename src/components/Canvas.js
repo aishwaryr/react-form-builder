@@ -49,6 +49,7 @@ class Canvas extends Component {
     console.log(canvasSpace);
     return (
       <div onDragOver={e => this.onDragOver(e)} onDrop={e => this.onDrop(e)}>
+        <h3 className="text-center">Canvas</h3>
         {canvasSpace}
       </div>
     );

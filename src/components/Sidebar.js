@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import { connect } from "react-redux";
 
-import { setFormData } from "../actionCreators";
-// import Dropdown from "./form-elements/Dropdown";
+// import { setFormData } from "../actionCreators";
+// import Datepicker from "./form-elements/Datepicker";
 
 class Sidebar extends Component {
   onDragStart = (ev, element) => {
@@ -13,6 +13,7 @@ class Sidebar extends Component {
   render() {
     return (
       <div>
+        <h3 className="text-center">UI Widgets</h3>
         <ListGroup>
           <ListGroupItem>
             <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "input")}>
@@ -35,6 +36,11 @@ class Sidebar extends Component {
             </button>
           </ListGroupItem>
           <ListGroupItem>
+            <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "datepicker")}>
+              Datepicker
+            </button>
+          </ListGroupItem>
+          <ListGroupItem>
             <button className="btn btn-danger" onClick={this.props.deleteForm}>
               Delete Form
             </button>
@@ -45,11 +51,12 @@ class Sidebar extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  deleteForm() {
-    localStorage.removeItem("formData");
-    dispatch(setFormData([]));
-  }
-});
+// const mapDispatchToProps = dispatch => ({
+//   deleteForm() {
+//     localStorage.removeItem("formData");
+//     dispatch(setFormData([]));
+//   }
+// });
 
-export default connect(null, mapDispatchToProps)(Sidebar);
+// export default connect(null, mapDispatchToProps)(Sidebar);
+export default Sidebar;

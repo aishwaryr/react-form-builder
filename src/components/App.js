@@ -6,6 +6,8 @@ import store from "../store";
 import FormBuilder from "./FormBuilder";
 import "./App.css";
 
+localStorage.removeItem("formData");
+
 const App = () => (
   <BrowserRouter>
     <Provider store={store}>

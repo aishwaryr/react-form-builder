@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 import Modal from "react-responsive-modal";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
 import { formHTMLElement } from "../util/elementIn";
-// import { setFormData } from "../actionCreators";
+import { setFormData } from "../actionCreators";
 import Sidebar from "./Sidebar";
 import Canvas from "./Canvas";
 import InputDetailsForm from "./element-details/InputDetailsForm";
@@ -32,7 +32,11 @@ class FormBuilder extends Component {
   onDrop = ev => {
     let element = ev.dataTransfer.getData("element");
     console.log(element);
-    this.onOpenModal(element);
+    if (element === "datepicker") {
+      formHTMLElement({ element });
+    } else {
+      this.onOpenModal(element);
+    }
   };
 
   submitModal = elementDetails => {
@@ -41,6 +45,7 @@ class FormBuilder extends Component {
     formHTMLElement(elementDetails);
   };
   render() {
+    // this.props.deleteForm();
     let modalForm;
     if (this.state.chosenElement === "input") {
       modalForm = <InputDetailsForm submitModal={this.submitModal} />;
@@ -59,7 +64,7 @@ class FormBuilder extends Component {
         <Container>
           <Row>
             <Col className="app-section">
-              <Sidebar />
+              <Sidebar deleteForm={this.props.deleteForm} />
             </Col>
             <Col className="app-section" onDragOver={e => this.onDragOver(e)} onDrop={e => this.onDrop(e)}>
               <Canvas />
@@ -71,12 +76,12 @@ class FormBuilder extends Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   deleteForm() {
-//     localStorage.removeItem("formData");
-//     dispatch(setFormData([]));
-//   }
-// });
+const mapDispatchToProps = dispatch => ({
+  deleteForm() {
+    localStorage.removeItem("formData");
+    dispatch(setFormData([]));
+  }
+});
 
-// export default connect(null, mapDispatchToProps)(FormBuilder);
-export default FormBuilder;
+export default connect(null, mapDispatchToProps)(FormBuilder);
+// export default FormBuilder;
