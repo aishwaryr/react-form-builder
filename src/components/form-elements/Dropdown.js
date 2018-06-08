@@ -7,7 +7,7 @@ import { FormGroup, Label, Input } from "reactstrap";
 
 class Dropdown extends Component {
   render() {
-    const { label, options, index } = this.props;
+    const { label, options } = this.props;
     return (
       <FormGroup>
         <Label for="exampleSelect">{label}</Label>

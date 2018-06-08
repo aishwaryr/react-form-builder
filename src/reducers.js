@@ -8,8 +8,6 @@ const formData = (state = [], action) => {
   return state;
 };
 
-// since we are using combine reducers now - every reducer below now is only concerned with a pice of app state. no need to copy and return new state. just return the new
-
 const rootReducer = combineReducers({
   formData
 });

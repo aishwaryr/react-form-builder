@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
-import { connect } from "react-redux";
-
-// import { setFormData } from "../actionCreators";
-// import Datepicker from "./form-elements/Datepicker";
 
 class Sidebar extends Component {
   onDragStart = (ev, element) => {
@@ -14,6 +10,7 @@ class Sidebar extends Component {
     return (
       <div>
         <h3 className="text-center">UI Widgets</h3>
+        <h6>Drag & Drop elements on the canvas to build a form</h6>
         <ListGroup>
           <ListGroupItem>
             <button className="btn btn-primary" draggable onDragStart={e => this.onDragStart(e, "input")}>
@@ -42,7 +39,7 @@ class Sidebar extends Component {
           </ListGroupItem>
           <ListGroupItem>
             <button className="btn btn-danger" onClick={this.props.deleteForm}>
-              Delete Form
+              Reset Form
             </button>
           </ListGroupItem>
         </ListGroup>
@@ -51,12 +48,4 @@ class Sidebar extends Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   deleteForm() {
-//     localStorage.removeItem("formData");
-//     dispatch(setFormData([]));
-//   }
-// });
-
-// export default connect(null, mapDispatchToProps)(Sidebar);
 export default Sidebar;

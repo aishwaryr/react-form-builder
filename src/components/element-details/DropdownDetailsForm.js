@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-import { spacing } from "material-ui/styles";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 class InputDetailsForm extends Component {
   state = {
@@ -46,7 +45,7 @@ class InputDetailsForm extends Component {
             onChange={this.handleChange}
           />
         </FormGroup>
-        <p>Options: {this.state.options.map((option, index) => <span key={index}>{option}, </span>)} </p>
+        <p>Options: [{this.state.options.map((option, index) => <span key={index}>{option}, </span>)}] </p>
         <FormGroup>
           <Label for="exampleLabel">Enter an option</Label>
           <Input

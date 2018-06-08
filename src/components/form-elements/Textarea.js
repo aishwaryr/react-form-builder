@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
 import { FormGroup, Label, Input } from "reactstrap";
-
-// import { formHTMLElement } from "../util/elementIn";
-// import { setFormData } from "../actionCreators";
 
 class Textarea extends Component {
   render() {

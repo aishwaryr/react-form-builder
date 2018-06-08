@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
-import { FormGroup, Label, Input, Button } from "reactstrap";
+import { FormGroup, Label, Button } from "reactstrap";
 import FontAwesome from "react-fontawesome";
-// import { formHTMLElement } from "../util/elementIn";
-// import { setFormData } from "../actionCreators";
 
 class Textarea extends Component {
   state = {

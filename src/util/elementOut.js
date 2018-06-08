@@ -10,7 +10,7 @@ import Datepicker from "../components/form-elements/Datepicker";
 export function writeElementToCanvas(element) {
   console.log(element);
   if (element.element === "input") {
-    const { label, placeholder, index } = element;
+    // const { label, placeholder, index } = element;
     return <Textarea key={element.index} {...element} />;
   }
   if (element.element === "checkbox") {
