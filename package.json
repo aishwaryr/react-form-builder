@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "react-form-builder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -30,12 +30,14 @@
     "reactstrap": "^6.0.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
+    "serve": "^8.1.1",
     "styled-components": "^3.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-start": "serve --single ./build"
   }
 }
